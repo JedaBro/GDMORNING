@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #111;
+      color: #fff; /* Set default text color to white */
+      font-family: Arial, sans-serif; /* Set default font family */
+      flex-direction: column; /* Align items vertically */
+    }
+
+    h2{
+      position: relative;
+      font-size: 2em; /* Adjusted font size for smaller screens */
+      color: #222;
+    }
+
+    h2::before{
+      content: attr(data-text);
+      position: absolute;
+      color: #fff;
+      width: 200px; /* Adjusted width for smaller screens */
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #fff; /* Adjusted border thickness for smaller screens */
+      animation: animate 8s linear infinite;
+    }
+
+    @keyframes animate {
+      0%, 100% {
+        width: 0;
+      }
+      70%, 90% {
+        width: 100%;
+      }
+    }
+
+    /* Media query for smaller screens */
+    @media only screen and (max-width: 600px) {
+      h2 {
+        font-size: 1.5em; /* Further reduce font size for very small screens */
+      }
+
+      h2::before {
+        width: 150px; /* Further reduce width for very small screens */
+        border-right: 1px solid #fff; /* Further reduce border thickness for very small screens */
+      }
+    }
+
+    /* Style for paragraph */
+    p {
+      font-size: 1.2em;
+      text-align: center;
+      color: pink; /* Set paragraph color to pink */
+      animation: shake 0.5s ease infinite alternate; /* Add animation to paragraph */
+    }
+
+    /* Button container */
+    .button-container {
+      display: flex;
+      flex-direction: row; /* Align buttons horizontally */
+    }
+
+    /* Button styles */
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 10px; /* Set font size back to default */
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Button hover effect */
+    button:hover {
+      background-color: #555;
+    }
+
+    /* Button click effect */
+    button:active {
+      transform: translateY(2px);
+    }
+
+    /* Animation for paragraph */
+    @keyframes shake {
+      from {
+        transform: translateX(-2px);
+      }
+      to {
+        transform: translateX(2px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2 data-text="GOOD MORNING">GOOD MORNING</h2><br>
+  <p>PWEDE MOBA AKO SAMAHAN<br> HANGANG SA PAG TANDA?</p>
+  <div class="button-container">
+    <button onclick="location.href='flower.html';">YES</button>
+    <button onclick="alert('OHHH!! OUCHHHYYY!');">NO</button>
+  </div>
+</body>
+</html>
